@@ -4,8 +4,8 @@ from .models import Data
 
 # Create your views here.
 
-API_KEY = 't0S9A3xCz0kIHVZqgIjAiUclkAuQUDtW'
-NFT_API_KEY = 'zeWCimbw8U2VHwu66g7dRMnBGcQyeNJB'
+API_KEY = 'Your Dune Api Key'
+NFT_API_KEY = 'Your Dune Api Key'
 
 #* LXP API VIEW
 
