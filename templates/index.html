@@ -1,0 +1,94 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>linea</title>
+    <link rel="stylesheet" href="{% static 'css/output.css' %}">
+</head>
+<body class="bg1">
+
+    <!--* HEAD LOGO -->
+
+    <div class="h-[110px] flex items-center justify-center">
+        <img width="80px" src="{% static 'img/LINEAORANGE.svg' %}" alt="">
+    </div>
+
+    <!--* MAIN -->
+
+    <main class="mb-24">
+
+        <div>
+            <div class="container bg-one w-[90%] h-[400px] m-auto rounded-lg flex flex-col">
+                <div class="h-[45%] flex items-center justify-center flex-col gap-2">
+                    <span class="font-atyp-bold text-3xl">Your Rank:</span>
+                    <h2 class="text-white font-atyp-bold text-5xl">{{ user_rank }}</h2>
+                </div>
+                <div class="h-[45%] flex items-center justify-center flex-col gap-2">
+                    <span class="font-atyp-bold text-3xl">Your LXP:</span>
+                    <h2 class="text-my-orange font-atyp-bold text-5xl">{{ user_lxp }}</h2>
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+            <div class="container gap-8 w-[350px]  mt-10 m-auto h-40 ">
+
+                <form action="" method="post" class="w-full h-full gap-8 flex items-center justify-center flex-col">
+                    {% csrf_token %}
+                    <input id="addressInput" required name="address" class="w-full h-10 p-3 rounded-md bg-my-gray text-orange-500 font-atyp-normal" placeholder="Enter Your EVM Address" type="text">
+                    <button id="submitButton" type="submit" class="bg-my-orange w-full h-10 text-white rounded-xl font-atyp-normal">Enter</button>
+                </form>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!--* FOOTER -->
+
+    <footer class="h-20 bg-white shadow fixed bottom-0 w-full flex items-center justify-between">
+
+        <div class="w-36 h-full flex items-center justify-center">
+            <a href="#" class="flex flex-col items-center justify-center gap-2">
+                <img class="w-14 h-8" src="{% static 'img/ornglxp.svg' %}" alt="">
+                <p class="text-my-orange font-atyp-normal text-xs">Lxp & Rank</p>
+            </a>
+        </div>
+
+        <div class="w-36 h-full flex items-center justify-center">
+            <a href="/nfts" class="flex flex-col items-center justify-center gap-2">
+                <img class="w-14 h-8" src="{% static 'img/voyagegray.svg' %}" alt="">
+                <p class="text-my-gray font-atyp-normal text-xs">Lxp & Rank</p>
+            </a>
+        </div>
+
+        <div class="w-36 h-full flex items-center justify-center">
+            <a href="/about-us" class="flex flex-col items-center justify-center gap-2">
+                <img class="w-8 h-8" src="{% static 'img/lineagray.svg' %}" alt="">
+                <p class="text-my-gray font-atyp-normal text-xs">Lxp & Rank</p>
+            </a>
+        </div>
+        
+    </footer>
+
+   
+    <!--* FORM SCRIPT -->
+
+    <script>
+        document.getElementById('submitButton').addEventListener('click', function() {
+            const address = document.getElementById('addressInput').value;
+            const isValidAddress = /^0x[a-fA-F0-9]{40}$/.test(address);
+            if (!isValidAddress) {
+                this.textContent = 'error';
+            } else {
+                this.textContent = 'Request processing ...';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>linea</title>
+    <link rel="stylesheet" href="{% static 'css/output.css' %}">
+</head>
+<body class="bg2">
+
+    <!--* HEAD LOGO -->
+
+    <div class="h-[110px] flex items-center justify-center">
+        <img width="80px" src="{% static 'img/LINEABLUE.svg' %}" alt="">
+    </div>
+
+    <!--* MAIN -->
+
+    <main class="mb-24">
+
+       <div>
+
+        <div class="glass container rounded-xl w-[90%] gap-5 m-auto h-[570px] font-atyp-bold text-3xl flex items-center py-7 flex-col">
+            <h1>Your Voyage NFTs</h1>
+
+            <div class="w-[90%] bg-blue-500 h-16 rounded-xl flex items-center justify-between p-4">
+                <h2>Alpha : </h2>
+                <span>{{ alpha }}</span>
+            </div>
+
+            <div class="w-[90%] text-white bg-blue-800 h-16 rounded-xl flex items-center justify-between p-4">
+                <h2>Beta : </h2>
+                <span>{{ beta }}</span>
+            </div>
+
+            <div class="w-[90%] text-white bg-pink-400 h-16 rounded-xl flex items-center justify-between p-4">
+                <h2>Gamma : </h2>
+                <span>{{ gamma }}</span>
+            </div>
+
+            <div class="w-[90%] text-white bg-my-orange h-16 rounded-xl flex items-center justify-between p-4">
+                <h2>Delta : </h2>
+                <span>{{ delta }}</span>
+            </div>
+
+            <div class="w-[90%] bg-lime-400 h-16 rounded-xl flex items-center justify-between p-4">
+                <h2>Omega : </h2>
+                <span>{{ omega }}</span>
+            </div>
+
+            <h2>
+                Total : {{ total }}
+            </h2>
+
+        </div>
+
+       </div>
+
+    </main>
+
+    <!--* FOOTER -->
+
+    <footer class="h-20 bg-white shadow fixed bottom-0 w-full flex items-center justify-between">
+
+        <div class="w-36 h-full flex items-center justify-center">
+            <a href="/" class="flex flex-col items-center justify-center gap-2">
+                <img class="w-14 h-8" src="{% static 'img/graylxp.svg' %}" alt="">
+                <p class="text-my-gray font-atyp-normal text-xs">Lxp & Rank</p>
+            </a>
+        </div>
+
+        <div class="w-36 h-full flex items-center justify-center">
+            <a href="#" class="flex flex-col items-center justify-center gap-2">
+                <img class="w-14 h-8" src="{% static 'img/voyageblue.svg' %}" alt="">
+                <p class="text-blue-300 font-atyp-normal text-xs">Lxp & Rank</p>
+            </a>
+        </div>
+
+        <div class="w-36 h-full flex items-center justify-center">
+            <a href="/about-us" class="flex flex-col items-center justify-center gap-2">
+                <img class="w-8 h-8" src="{% static 'img/lineagray.svg' %}" alt="">
+                <p class="text-my-gray font-atyp-normal text-xs">Lxp & Rank</p>
+            </a>
+        </div>
+        
+    </footer>
+
+   
+    <!--* FORM SCRIPT -->
+
+    <script>
+        document.getElementById('submitButton').addEventListener('click', function() {
+            const address = document.getElementById('addressInput').value;
+            const isValidAddress = /^0x[a-fA-F0-9]{40}$/.test(address);
+            if (!isValidAddress) {
+                this.textContent = 'error';
+            } else {
+                this.textContent = 'Request processing ...';
+            }
+        });
+    </script>
+</body>
+</html>

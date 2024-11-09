@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body{
+        @apply sm:hidden;
+        
+    }
+
+    .bg1{
+        background-size: cover;
+        background-image: url("/static/img/bg.png");
+        background-position: center;
+    }
+
+    .bg2{
+        background-size: cover;
+        background-image: url("/static/img/bg2.png");
+        background-position: center;
+    }
+
+    .container{
+        padding: 10px;
+    }
+
+    .glass{
+        
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .bg-one{
+        background-size: 100% 100%;
+        background-image: url("/static/img/page1.svg");
+    }
+
+    @font-face {
+        font-family: atyp-bold;
+        src: url(/static/fonts/AtypDisplay-Bold.ttf);
+    }
+
+    @font-face {
+        font-family: atyp-normal;
+        src: url(/static/fonts/AtypDisplay-Medium.ttf);
+    }
+
+    input::placeholder {
+        @apply text-orange-400 font-bold;
+    }
+}
