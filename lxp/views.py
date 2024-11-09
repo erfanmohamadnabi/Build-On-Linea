@@ -9,11 +9,8 @@ NFT_API_KEY = 'Your Dune Api Key'
 
 #* LXP API VIEW
 
-[{'LXP': '5451', 'NFTs': '4', 'rank': 5994, 'wallet': '0x545425f9686b56078da3bfac5f9f25bb287b1291'}]
 
 def Index(request):
-
-
 
     context = {
                 'user_lxp': 0,
